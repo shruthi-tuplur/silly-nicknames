@@ -1,4 +1,3 @@
-#from multiprocessing.pool import TERMINATE # <-- i was going to use the terminate command before i forgot that terminate isn't built in, but it's cool that it automatically got imported??!!
 import random, time, sys #importing "random" library to pick names, "time" library to sleep, and "sys" to change output color
 
 #explain program to user
