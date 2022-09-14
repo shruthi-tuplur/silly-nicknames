@@ -1,0 +1,37 @@
+#from multiprocessing.pool import TERMINATE # <-- i was going to use the terminate command before i forgot that terminate isn't built in, but it's cool that it automatically got imported??!!
+import random, time, sys #importing "random" library to pick names, "time" library to sleep, and "sys" to change output color
+
+#explain program to user
+print("\n Hello, this is the silly useless nickname generator. It will generate a nickname that is both silly and useless. \n") 
+time.sleep(1)
+
+#user initiates program execution by responding to prompt
+ready = input("Are you ready to find out your silly and useless nickname? Type 'y' for yes and 'n' for no: " ) 
+ready.lower()
+
+#create list of first names and last names
+first = ('Scuds', 'Footface', 'Stinkbug', 'Burpy', 'Cabbagè', 'Longbranch', 'Greasy Jim', "Isaiah 'Paperclips' ", 'Jimbo Himbo', 'Elephante Jazzerton', 'Squirts', "Stubbs 'Candy Corn' ")
+last = ('McGee', 'Herman', 'Boogerbottom', 'Clusterbuck', 'Spinachtooth', 'Ragretsalackin', 'Jingleheimer-Schmidt', 'Hoosegow', 'Orangepeel', 'Hippopotamusson', 'McFeeterson')
+
+#function to assemble the nicknames
+def nickname():
+   while True:
+       firstName = random.choice(first)
+       lastName =  random.choice(last)
+       print("\n\n")
+       print("{} {}".format(firstName, lastName), file=sys.stderr)
+       print("\n\n")
+       try_again = input("\n\nTry again? (Press Enter to try again or n to quit)\n ")
+       if try_again.lower() == "n":
+           break
+   input("\nPress Enter to exit.")    
+       
+
+if ready == "y":
+  #insert function here
+  time.sleep(1)
+  nickname()
+else:
+  time.sleep(1)
+  print("Ok, goodbye!")
+  quit()      
